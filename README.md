@@ -1,2 +1,2 @@
-# Mozambique-zip-code
-Mozambique postal codes (ZIP Code)
+# Moz-cep-api
+Mozambique postal codes (ZIP Code) API

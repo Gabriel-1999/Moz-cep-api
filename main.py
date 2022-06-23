@@ -7,10 +7,10 @@ app = FastAPI()
 @app.get("/buscar-por-nome/{nome}")
 def get_cep_nome(nome: str):
     retorno = controller.busca(nome.title())
-    if retorno == None:
+    if retorno is None:
         retorno = controller.busca2(nome.title())
-        if retorno == None:
-            return {f"mensage":f"nome { {nome} } inexistente"}
+        if retorno is None:
+            return {f"mensage": f"nome { {nome} } inexistente"}
         return retorno
     else:
         return retorno

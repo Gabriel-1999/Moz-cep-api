@@ -16,7 +16,6 @@ def get_cep_nome(nome: str):
         return retorno
 
 
-
 @app.get("/buscar-todos/")
 def get_datas():
     data = controller.show()
@@ -26,7 +25,7 @@ def get_datas():
         distrito = x[2]
         bairro = x[3]
         cep = x[4]
-        distritosJson = {
+        distritos_json = {
                     distrito: {
                         "cidade": cidade,
                         "distrito": distrito,
@@ -34,22 +33,20 @@ def get_datas():
                         "cep": cep
                     }
                 }
-        lista.append(distritosJson)
-
-    data2 = controller.show2()
+        lista.append(distritos_json)
     lista2 = []
     for x in data.fetchall():
         provincia = x[1]
         distrito = x[2]
         postoadmin = x[3]
         cep = x[4]
-        distritosJson2 = {
+        distritos_json2 = {
                     distrito: {
                         "provincia": provincia,
                         "distrito": distrito,
-                        "posto administrativo": bairro,
+                        "posto administrativo": postoadmin,
                         "cep": cep
                     }
                 }
-        lista2.append(distritosJson2)
+        lista2.append(distritos_json2)
     return lista, lista2

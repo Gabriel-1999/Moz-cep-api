@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding:0;
+}
+h1{
+    text-align:center;
+    color:gray;
+    margin:20px;
+}
+.formulario{
+    display:flex;
+    flex-direction: column;
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content:center;
+}
+input[type=text]{
+    width:350px;
+    height: 24px;
+    outline:none;
+    border-radius: 6px;
+    border: 1px solid rgb(64, 146, 64);
+}
+button{
+    background-color:rgb(64, 146, 64);
+    color: whitesmoke;
+    width: 100px;
+    height: 26px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.resultado{
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding:30px;
+    justify-content: center;
+}
+.btn{
+    display: flex;
+    width: 50%;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+.btn > button{
+    height: 30px;
+    text-transform: capitalize;
+    font-weight: bolder;
+}

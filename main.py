@@ -1,10 +1,16 @@
-from fastapi import FastAPI
+from flask import Flask, render_template
 import controller
 
-app = FastAPI()
+app = Flask(__name__)
 
 
-@app.get("/buscar-por-nome/{nome}")
+@app.get("/")
+def home():
+    print(app.get("busca"))
+    return render_template("index.html")
+
+
+@app.get("/buscar-por-nome/{nome}", methods=["GET", "POST"])
 def get_cep_nome(nome: str):
     retorno = controller.busca(nome.title())
     if retorno is None:
@@ -50,3 +56,8 @@ def get_datas():
                 }
         lista2.append(distritos_json2)
     return lista, lista2
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
